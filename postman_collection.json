@@ -1,0 +1,175 @@
+{
+  "info": {
+    "name": "ePayco REST Client API",
+    "description": "Colección de Postman para probar el cliente REST de ePayco",
+    "version": "1.0.0"
+  },
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/health",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["health"]
+        }
+      }
+    },
+    {
+      "name": "API Info",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000"
+        }
+      }
+    },
+    {
+      "name": "Registrar Cliente",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"documento\": \"12345678\",\n  \"nombres\": \"Juan Pérez\",\n  \"email\": \"juan@email.com\",\n  \"celular\": \"3001234567\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/registrar",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "registrar"]
+        }
+      }
+    },
+    {
+      "name": "Recargar Billetera",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"documento\": \"12345678\",\n  \"celular\": \"3001234567\",\n  \"valor\": 100.50\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/recargar",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "recargar"]
+        }
+      }
+    },
+    {
+      "name": "Realizar Pago",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"documento\": \"12345678\",\n  \"celular\": \"3001234567\",\n  \"valor\": 50.00\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/pagar",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "pagar"]
+        }
+      }
+    },
+    {
+      "name": "Confirmar Pago",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id_sesion\": \"session_123456\",\n  \"token\": \"123456\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/confirmar-pago",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "confirmar-pago"]
+        }
+      }
+    },
+    {
+      "name": "Consultar Saldo (GET)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/consultar-saldo?documento=12345678&celular=3001234567",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "consultar-saldo"],
+          "query": [
+            {
+              "key": "documento",
+              "value": "12345678"
+            },
+            {
+              "key": "celular",
+              "value": "3001234567"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Consultar Saldo (POST)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"documento\": \"12345678\",\n  \"celular\": \"3001234567\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/consultar-saldo",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "consultar-saldo"]
+        }
+      }
+    }
+  ]
+}
