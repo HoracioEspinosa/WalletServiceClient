@@ -1,7 +1,7 @@
 {
   "name": "epayco-rest-client",
   "version": "1.0.0",
-  "description": "REST Client para consumir el servicio SOAP de ePayco",
+  "description": "REST Client para consumir el servicio SOAP de ePayco (2025)",
   "main": "src/app.js",
   "scripts": {
     "start": "node src/app.js",
