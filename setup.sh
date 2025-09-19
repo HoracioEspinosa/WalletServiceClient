@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "🚀 Configurando el cliente REST de ePayco... second chance"
+echo "🚀 Configurando el cliente REST de ePayco..."
 
 # Verificar si Node.js está instalado
 if ! command -v node &> /dev/null; then
